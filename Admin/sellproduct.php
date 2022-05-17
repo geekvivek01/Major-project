@@ -26,7 +26,7 @@ if(isset($_REQUEST['psubmit'])){
   $custid = rand(1000000,9999999);
   $sql = "INSERT INTO customer_tb (custid, custname, custadd, cpname, cpquantity, cpeach, cptotal, cpdate) VALUES ('$custid','$custname', '$custadd', '$cpname', '$cpquantity', '$cpeach', '$cptotal', '$cpdate')";
   if($conn->query($sql) == TRUE){
-   $custid = mysqli_insert_id($conn);
+   #$custid = mysqli_insert_id($conn);
    session_start();
    $_SESSION['custid'] = $custid;
    echo "<script> location.href='productsellsuccess.php'; </script>";
